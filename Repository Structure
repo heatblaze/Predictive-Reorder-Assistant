@@ -1,0 +1,36 @@
+Predictive-Reorder-Assistant
+├── frontend/
+│   └── src/
+│   │  └── pages/
+│   │   ├── About.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── InventoryList.jsx
+│   │   ├── InventoryDetails.jsx
+│   │   ├── AddItem.jsx
+│   │   ├── ReorderRequests.jsx
+│   │    ├── Reports.jsx
+│   │   └── Alerts.jsx
+│   │── App.jsx
+│   │── App.css
+│   │── index.css
+│   │── main.jsx
+│   │── assets/
+│   │   └── react.svg
+│   │── public/
+│   │   └── vite.svg
+├── backend/
+│   ├── routes/
+│   │ └── inventory.js
+│   ├── models/
+│   │ └── Inventory.js
+│   │── server.js
+│   ├── seed.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env
+├── additem.png
+├── dashboard.png
+├── inventroy.png
+├── reports.png
+├── package.json
+└── package-lock.json
