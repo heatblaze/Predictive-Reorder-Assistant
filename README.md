@@ -65,48 +65,6 @@ This project was built as part of an assignment to demonstrate practical use of 
 
 ---
 
-## 📂 Folder Structure
-
-Predictive-Reorder-Assistant
-├── frontend/
-│   └── src/
-│   │  └── pages/
-│   │   ├── About.jsx
-│   │   ├── Dashboard.jsx
-│   │   ├── InventoryList.jsx
-│   │   ├── InventoryDetails.jsx
-│   │   ├── AddItem.jsx
-│   │   ├── ReorderRequests.jsx
-│   │    ├── Reports.jsx
-│   │   └── Alerts.jsx
-│   │── App.jsx
-│   │── App.css
-│   │── index.css
-│   │── main.jsx
-│   │── assets/
-│   │   └── react.svg
-│   │── public/
-│   │   └── vite.svg
-├── backend/
-│   ├── routes/
-│   │ └── inventory.js
-│   ├── models/
-│   │ └── Inventory.js
-│   │── server.js
-│   ├── seed.js
-│   ├── package.json
-│   ├── package-lock.json
-│   └── .env
-├── additem.png
-├── dashboard.png
-├── inventroy.png
-├── reports.png
-├── package.json
-└── package-lock.json
-
-
----
-
 ## 🧑‍💻 Setup Instructions
 
 ### ⚙️ Prerequisites
@@ -157,7 +115,8 @@ The goal was to keep the experience lightweight yet insightful. I structured the
 - React Router for deep linking (/inventory/:id)
 - Smart calculations on the backend to keep frontend logic minimal
 - Minimal design using plain CSS, dark theme, and responsive layout
-- Modular file structure to allow easy scaling (e.g., auth, user roles)
+- Modular file structure to allow easy scaling (e.g., auth, user roles).
+
 The hardest part was ensuring the trend forecasting logic was clear and usable. I chose to use a 30-day reorder prediction to keep it practical.
 
 ---
@@ -174,9 +133,9 @@ The hardest part was ensuring the trend forecasting logic was clear and usable. 
 
 ## 📬 Contact
 Feel free to reach out if you’d like to discuss improvements or feedback!
-**Name**: Aditya Chitransh
-**Email**: adityachitransh18@gmail.com
-LinkedIn: [Linkedin](https://www.linkedin.com/in/aditya-chitransh-213583275/)
+- **Name**: Aditya Chitransh
+- **Email**: adityachitransh18@gmail.com
+- **LinkedIn**: [Linkedin](https://www.linkedin.com/in/aditya-chitransh-213583275/)
 
 ---
 
