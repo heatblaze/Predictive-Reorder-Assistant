@@ -83,6 +83,7 @@ npm install
 
 ### 📝 Create a .env file in the server/ directory:
 MONGO_URI=mongodb://localhost:27017/inventorydb
+
 PORT=5000
 
 ```bash
