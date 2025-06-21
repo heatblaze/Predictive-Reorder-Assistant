@@ -1,21 +1,36 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddItem() {
   const [itemName, setItemName] = useState('');
   const [currentStock, setCurrentStock] = useState('');
   const [avgDailyUsage, setAvgDailyUsage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/inventory", {
-      itemName, currentStock, avgDailyUsage
-    }).then(() => {
-      alert("Item added successfully!");
-      setItemName('');
-      setCurrentStock('');
-      setAvgDailyUsage('');
-    }).catch(console.error);
+
+    // Ensure numbers are parsed as integers/floats
+    const stock = parseInt(currentStock);
+    const usage = parseFloat(avgDailyUsage);
+
+    axios.post("https://predictive-reorder-assistant.onrender.com/api/inventory", {
+      itemName,
+      currentStock: stock,
+      avgDailyUsage: usage
+    })
+      .then(() => {
+        alert("Item added successfully!");
+        setItemName('');
+        setCurrentStock('');
+        setAvgDailyUsage('');
+        navigate("/inventory");  // Redirect to inventory list
+      })
+      .catch((err) => {
+        console.error("Failed to add item:", err);
+        alert("Failed to add item. Please try again.");
+      });
   };
 
   return (
