@@ -9,7 +9,7 @@ export default function InventoryList() {
   axios.get("https://predictive-reorder-assistant.onrender.com/api/inventory")
     .then((res) => {
       console.log("Inventory fetched:", res.data);
-      setInventory(res.data);
+      setData(res.data);
     })
     .catch(console.error);
 }, []);
