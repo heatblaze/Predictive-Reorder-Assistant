@@ -5,14 +5,17 @@ import { Link } from 'react-router-dom';
 export default function InventoryList() {
   const [data, setData] = useState([]);
 
- useEffect(() => {
+useEffect(() => {
   axios.get("https://predictive-reorder-assistant.onrender.com/api/inventory")
     .then((res) => {
       console.log("Inventory fetched:", res.data);
-      setData(res.data);
+      setData(res.data); // ✅ Correct function
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error("Error fetching inventory:", err);
+    });
 }, []);
+
 
 
   return (
