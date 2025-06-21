@@ -7,7 +7,9 @@ export default function InventoryList() {
 
   useEffect(() => {
     const fetchData = () => {
-      axios.get("http://localhost:5000/api/inventory")
+      axios.get("https://predictive-reorder-assistant.onrender.com/api/inventory", {
+      timeout: 60000  // optional, allows time for waking up
+      })
         .then(res => setData(res.data))
         .catch(err => console.error(err));
     };
