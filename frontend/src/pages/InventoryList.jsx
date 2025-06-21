@@ -5,18 +5,15 @@ import { Link } from 'react-router-dom';
 export default function InventoryList() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = () => {
-      axios.get("https://predictive-reorder-assistant.onrender.com/api/inventory", {
-      timeout: 60000  // optional, allows time for waking up
-      })
-        .then(res => setData(res.data))
-        .catch(err => console.error(err));
-    };
-    fetchData();
-    const interval = setInterval(fetchData, 5000);
-    return () => clearInterval(interval);
-  }, []);
+ useEffect(() => {
+  axios.get("https://predictive-reorder-assistant.onrender.com/api/inventory")
+    .then((res) => {
+      console.log("Inventory fetched:", res.data);
+      setInventory(res.data);
+    })
+    .catch(console.error);
+}, []);
+
 
   return (
     <div className="page-container">
