@@ -5,11 +5,16 @@ export default function Alerts() {
   const [alerts, setAlerts] = useState([]);
 
   
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/inventory")
-      .then(res => setAlerts(res.data.filter(i => i.daysUntilRunOut < 3)))
-      .catch(console.error);
-  }, []);
+useEffect(() => {
+  const BASE_URL = "https://predictive-reorder-assistant.onrender.com"; // ← Hardcoded
+
+  axios.get(`${BASE_URL}/api/inventory`)
+    .then(res => setData(res.data))
+    .catch(err => {
+      console.error("Failed to fetch inventory:", err);
+    });
+}, []);
+
 
   return (
     <div className="page-content">
