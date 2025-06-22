@@ -5,10 +5,15 @@ export default function ReorderRequests() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/inventory")
-      .then(res => setItems(res.data.filter(i => i.daysUntilRunOut <= 5)))
-      .catch(console.error);
-  }, []);
+  const BASE_URL = "https://predictive-reorder-assistant.onrender.com"; // ← Hardcoded
+
+  axios.get(`${BASE_URL}/api/inventory`)
+    .then(res => setData(res.data))
+    .catch(err => {
+      console.error("Failed to fetch inventory:", err);
+    });
+}, []);
+
 
   return (
     <div className="page-content">
