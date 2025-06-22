@@ -8,9 +8,7 @@ export default function Reports() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-  const BASE_URL = import.meta.env.PROD
-    ? "https://predictive-reorder-assistant.onrender.com"
-    : "http://localhost:5000";
+  const BASE_URL = "https://predictive-reorder-assistant.onrender.com"; // ← Hardcoded
 
   axios.get(`${BASE_URL}/api/inventory`)
     .then(res => setData(res.data))
@@ -18,6 +16,7 @@ export default function Reports() {
       console.error("Failed to fetch inventory:", err);
     });
 }, []);
+
 
 
   const chartData = {
