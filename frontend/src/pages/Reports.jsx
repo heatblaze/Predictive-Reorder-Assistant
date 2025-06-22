@@ -8,10 +8,17 @@ export default function Reports() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/inventory")
-      .then(res => setData(res.data))
-      .catch(console.error);
-  }, []);
+  const BASE_URL = import.meta.env.PROD
+    ? "https://predictive-reorder-assistant.onrender.com"
+    : "http://localhost:5000";
+
+  axios.get(`${BASE_URL}/api/inventory`)
+    .then(res => setData(res.data))
+    .catch(err => {
+      console.error("Failed to fetch inventory:", err);
+    });
+}, []);
+
 
   const chartData = {
     labels: data.map(i => i.itemName),
